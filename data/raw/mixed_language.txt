@@ -1,0 +1,10 @@
+This file contains     multiple    languages:
+
+English:   “Hello   world!”  
+French:    café naïve élève déjà   — so many accents!!!
+Spanish:   ¡Hola! ¿Cómo    estás?  
+German:    Grüße   aus  München —–––––
+
+Emoji spam: 😂😂😂😂       💀💀💀     
+
+This text should be cleaned… maybe???

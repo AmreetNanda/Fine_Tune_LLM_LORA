@@ -1,0 +1,7 @@
+This file contains multiple languages:
+English: Hello world!
+French: caf nave lve dj so many accents!!!
+Spanish: Hola! Cmo ests?
+German: Gre aus Mnchen
+Emoji spam:
+This text should be cleaned maybe???

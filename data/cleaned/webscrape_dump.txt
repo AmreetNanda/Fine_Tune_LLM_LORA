@@ -1,0 +1,7 @@
+<html> <body>
+<div> Welcome to the site!!! </div>
+<p> This page contains text thatshouldvebeen cleaned. </p>
+<script>var x=10; console.log("hi")</script>
+<!-- Comment block??? -->
+End of page.
+</body></html>
