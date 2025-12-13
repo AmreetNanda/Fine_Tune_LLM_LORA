@@ -1,19 +1,16 @@
-Lightweight LLM Fine-Tuner# 🖥Lightweight LLM Fine-Tuner
+# 🖥Lightweight LLM Fine-Tuner
 
 > **A local-first framework for fine-tuning 3B–8B language models on consumer hardware using QLoRA or full fine-tuning, with built-in data preprocessing, tokenization experiments, evaluation, quantization, and local deployment via Ollama.**
 
 ## 🎯 Goal
-
 Fine-tune and deploy modern open-source LLMs such as:
 - Phi-3 Mini (3.8B)
 - Mistral 7B
 - Llama 3.1 8B
 ...locally for experimentation and research, while staying within realistic hardware limits.
-
 ---
 
-## Features
-
+## 🧩 Features
 - Fine-tune Ollama-supported LLMs (e.g., Mistral 7B, Llama 3B/8B) locally  
 - Lightweight **QLoRA/PEFT fine-tuning** with 4-bit quantization  
 - **Data cleaning pipeline** for raw datasets  
@@ -23,7 +20,7 @@ Fine-tune and deploy modern open-source LLMs such as:
 - Modular, GPU-friendly codebase designed for low VRAM  
 ---
 
-## Technologies Used:
+## 🔎 Technologies Used:
 Technologies Compatible with Your Hardware
 - Python 3.10+
 - PyTorch + Transformers (HuggingFace)
@@ -39,33 +36,27 @@ Technologies Compatible with Your Hardware
 lightweight-llm-finetuner/
 │
 ├── data/
-│   ├── raw                      #
-│   ├── cleaned                  #      
+│   ├── raw                      
+│   ├── cleaned                       
 │   └── scripts/
 │       └── preprocess.py
-
 ├── tokenizer/
 │   ├── tokenizer_experiments.py
 │   └── vocab_utils.py
-│
 ├── finetune/
 │   ├── config.py
 │   ├── qlora_trainer.py
 │   └── full_finetune.py
-│
 ├── evaluation/
 │   ├── eval_suite.py
 │   └── test_prompts.json
-│
 ├── deployment/
 │   ├── quantize_model.py
 │   └── serve_ollama.py
-│
 ├── utils/
 │   ├── logger.py
 │   ├── metrics.py
 │   └── file_ops.py
-│
 ├── models/
 ├── finetuned_models/
 ├── quantized_models/
@@ -73,17 +64,17 @@ lightweight-llm-finetuner/
 └── README.md
 ```
 
-## Workflow
+## 🧠 How It Works
 ```bash
    Raw Data
    ↓
-   Data Cleaning & Preprocessing
+   Data Cleaning and Preprocessing
    ↓
-   Tokenization & Vocabulary Experiments
+   Tokenization and Vocabulary Experiments
    ↓
    Fine-Tuning (QLoRA / Full FT)
    ↓
-   Evaluation & Benchmarks
+   Evaluation and Benchmarks
    ↓
    Quantization (4-bit / 8-bit)
    ↓
@@ -194,8 +185,11 @@ Open: 👉 http://localhost:8501
 
 ## Screenshots
 ![App Screenshot](https://github.com/AmreetNanda/Fine_Tune_LLM_LORA/blob/main/1.png)
+
 ![App Screenshot](https://github.com/AmreetNanda/Fine_Tune_LLM_LORA/blob/main/3.png)
+
 ![App Screenshot](https://github.com/AmreetNanda/Fine_Tune_LLM_LORA/blob/main/4.png)
+
 ![App Screenshot](https://github.com/AmreetNanda/Fine_Tune_LLM_LORA/blob/main/5.png)
 
 ## Demo 
