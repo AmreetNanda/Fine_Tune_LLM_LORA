@@ -1,0 +1,15 @@
+torch 
+transformers 
+datasets 
+bitsandbytes 
+accelerate
+langchain
+langchain_community
+langchain-core
+langchain-classic
+ipykernel
+streamlit
+python-dotenv
+peft
+transformers_hub
+flask

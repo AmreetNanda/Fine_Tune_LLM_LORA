@@ -11,7 +11,7 @@ from peft import PeftModel
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
-BASE_MODEL_DIR = "models/tinyllama-1.1b-chat"
+BASE_MODEL_DIR = "models/phi-2"
 
 # Perplexity calculation
 def calculate_perplexity(model, tokenizer, texts, max_length=512):

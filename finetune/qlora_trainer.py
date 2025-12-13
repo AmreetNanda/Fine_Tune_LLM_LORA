@@ -24,8 +24,8 @@ def load_texts_from_folder(folder):
     return texts
 
 # Ensuring the model exists locally
-# def get_local_model_dir(model_name, local_dir="models/phi-2"):   # For phi-2 model 
-def get_local_model_dir(model_name, local_dir="models/tinyllama-1.1b-chat"):   # For Tinyllama model
+def get_local_model_dir(model_name, local_dir="models/phi-2"):   # For phi-2 model 
+# def get_local_model_dir(model_name, local_dir="models/tinyllama-1.1b-chat"):   # For Tinyllama model
     if os.path.exists(local_dir) and os.listdir(local_dir):
         print(f"[INFO] Using existing local model at {local_dir}")
         return local_dir
