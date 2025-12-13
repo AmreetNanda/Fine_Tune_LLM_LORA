@@ -1,22 +1,31 @@
 import torch
-from transformers import AutoModelForCausalLM
+from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 
-MODEL_DIR = "./finetuned_models"
-QUANTIZED_DIR = "./quantized_models"
+# For Phi-2 model 
+# MODEL_DIR = "./finetuned_models/phi2_finetuned"
+# QUANTIZED_DIR = "./quantized_models/phi2_quantized"
 
-def quantize_model(model_dir = MODEL_DIR, output_dir=QUANTIZED_DIR, bits=4):
-    model = AutoModelForCausalLM.from_pretrained(model_dir, device_map='auto')
-    print(f"Original model loaded from {model_dir}")
+# # For Tinyllama model
+MODEL_DIR = "./finetuned_models/tinyllm_finetuned"
+QUANTIZED_DIR = "./quantized_models/tinyllm_quantized"
 
-    if bits==4:
-        model = model.quantize(bits=4) # pseudo-code , actual HF + bitsandbytes may vary
-    elif bits==8:
-        model = model.quantize(bits=8)
-    else:
+def quantize_model(model_dir=MODEL_DIR, output_dir=QUANTIZED_DIR, bits=4):
+    if bits not in (4, 8):
         raise ValueError("Bits must be 4 or 8")
 
+    bnb_config = None
+    if bits == 4:
+        bnb_config = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_use_double_quant=True)
+    elif bits == 8:
+        bnb_config = BitsAndBytesConfig(load_in_8bit=True)
+
+    model = AutoModelForCausalLM.from_pretrained(model_dir, device_map="auto", quantization_config=bnb_config)
+    tokenizer = AutoTokenizer.from_pretrained(model_dir)
+
     model.save_pretrained(output_dir)
+    tokenizer.save_pretrained(output_dir)
     print(f"Quantized {bits}-bit model saved to {output_dir}")
 
 if __name__ == "__main__":
     quantize_model()
+
